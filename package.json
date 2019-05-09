@@ -42,11 +42,7 @@
 				"mac": "cmd+k cmd+l"
 			}
 		],
-		"configuration": {
-			"type": "object",
-			"title": "Git last commit message",
-			"properties": {}
-		}
+		"configuration": {}
 	},
 	"scripts": {
 		"vscode:prepublish": "webpack --mode production",
