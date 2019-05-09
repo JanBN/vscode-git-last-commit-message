@@ -1,0 +1,74 @@
+{
+	"name": "git-last-commit-message",
+	"displayName": "Git load last commit message",
+	"description": "Pre fills with last commit message",
+	"version": "1.1.0",
+	"publisher": "JanBn",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JanBN/vscode-git-last-commit-message"
+	},
+	"engines": {
+		"vscode": "^1.1.30"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./dist/extension",
+	"contributes": {
+		"menus": {
+			"scm/title": [
+				{
+					"command": "extension.loadLastCommitMessage",
+					"when": "scmProvider == git",
+					"group": "inline",
+					"title": "Load last commit message"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "extension.loadLastCommitMessage",
+				"title": "Load last commit message"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "extension.loadLastCommitMessage",
+				"key": "ctrl+k ctrl+l",
+				"mac": "cmd+k cmd+l"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Git last commit message",
+			"properties": {}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "webpack --mode production",
+		"webpack": "webpack --mode development",
+		"webpack-dev": "webpack --mode development --watch",
+		"test-compile": "tsc -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"icon": "assets/icon.png",
+	"extensionDependencies": [
+		"vscode.git"
+	],
+	"devDependencies": {
+		"@types/node": "^8.10.25",
+		"ts-loader": "^4.4.2",
+		"tslint": "^5.8.0",
+		"typescript": "^3.3.3333",
+		"vscode": "^1.1.30",
+		"webpack": "^4.19.1",
+		"webpack-cli": "^3.1.0"
+	},
+	"dependencies": {
+		"vsce": "^1.58.0"
+	}
+}
