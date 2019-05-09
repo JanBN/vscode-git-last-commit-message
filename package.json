@@ -1,6 +1,6 @@
 {
 	"name": "git-last-commit-message",
-	"displayName": "Git load last commit message",
+	"displayName": "Git Last Commit Message (GLCM)",
 	"description": "Pre fills with last commit message",
 	"version": "1.1.0",
 	"publisher": "JanBn",
@@ -22,27 +22,52 @@
 		"menus": {
 			"scm/title": [
 				{
-					"command": "extension.loadLastCommitMessage",
+					"command": "glcm.loadLastCommitMessage",
 					"when": "scmProvider == git",
 					"group": "inline",
-					"title": "Load last commit message"
+					"title": "Load last message"
+				},
+				{
+					"command": "glcm.chooseLastCommitMessage",
+					"when": "scmProvider == git",
+					"group": "inline",
+					"title": "Choose from last messages"
 				}
 			]
 		},
 		"commands": [
 			{
-				"command": "extension.loadLastCommitMessage",
-				"title": "Load last commit message"
+				"command": "glcm.loadLastCommitMessage",
+				"title": "(GLCM) Load last commit message"
+			},
+			{
+				"command": "glcm.chooseLastCommitMessage",
+				"title": "(GLCM) Choose commit message from last messages"
 			}
 		],
 		"keybindings": [
 			{
-				"command": "extension.loadLastCommitMessage",
-				"key": "ctrl+k ctrl+l",
+				"command": "glcm.loadLastCommitMessage",
+				"key": "ctrl+l ctrl+l",
 				"mac": "cmd+k cmd+l"
+			},
+			{
+				"command": "glcm.chooseLastCommitMessage",
+				"key": "ctrl+l ctrl+k ",
+				"mac": "cmd+l cmd+k"
 			}
 		],
-		"configuration": {}
+		"configuration": {
+			"type": "object",
+			"title": "Git Last Commit Message",
+			"properties": {
+				"glcm.countOfCommitMessagesToChooseFrom": {
+					"type": "number",
+					"default": 10,
+					"description": "Specifies the maximum count of last commit messages to choose from"
+				}
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "webpack --mode production",
