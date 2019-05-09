@@ -48,13 +48,13 @@
 		"keybindings": [
 			{
 				"command": "glcm.loadLastCommitMessage",
-				"key": "ctrl+l ctrl+l",
+				"key": "ctrl+i ctrl+i",
 				"mac": "cmd+k cmd+l"
 			},
 			{
 				"command": "glcm.chooseLastCommitMessage",
-				"key": "ctrl+l ctrl+k ",
-				"mac": "cmd+l cmd+k"
+				"key": "ctrl+i ctrl+l ",
+				"mac": "cmd+i cmd+l"
 			}
 		],
 		"configuration": {

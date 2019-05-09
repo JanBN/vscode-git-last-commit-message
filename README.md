@@ -12,9 +12,9 @@ Load your last commit message into git commit box, or let you choose from last n
 
 ## Shortcuts
 
-**CTRL+L CTRL+L** - Loads last commit message into commit message box
+**CTRL+I CTRL+I** - Loads last commit message into commit message box
 
-**CTRL+L CTRL+K** - Let you choose from your last commit message and sets it as commit message
+**CTRL+I CTRL+L** - Let you choose from your last commit message and sets it as commit message
 
 ## Extension Settings
 
