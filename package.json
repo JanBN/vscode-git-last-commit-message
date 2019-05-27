@@ -2,7 +2,7 @@
 	"name": "git-last-commit-message",
 	"displayName": "Git Last Commit Message (GLCM)",
 	"description": "Pre fills with last commit message",
-	"version": "1.6.0",
+	"version": "1.7.0",
 	"publisher": "JanBn",
 	"repository": {
 		"type": "git",
