@@ -24,6 +24,7 @@ Load your last commit message into git commit box, or let you choose from last n
 
 ## Screenshots
 
+![](https://raw.githubusercontent.com/JanBN/vscode-git-last-commit-message/master/assets/screen_3.PNG)
 ![](https://raw.githubusercontent.com/JanBN/vscode-git-last-commit-message/master/assets/screen_1.PNG)
 ![](https://raw.githubusercontent.com/JanBN/vscode-git-last-commit-message/master/assets/screen_2.png)
 

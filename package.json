@@ -24,6 +24,12 @@
 				{
 					"command": "glcm.loadLastCommitMessage",
 					"when": "scmProvider == git",
+					"group": "navigation",
+					"title": "Load last message"
+				},
+				{
+					"command": "glcm.loadLastCommitMessage",
+					"when": "scmProvider == git",
 					"group": "inline",
 					"title": "Load last message"
 				},
@@ -38,7 +44,11 @@
 		"commands": [
 			{
 				"command": "glcm.loadLastCommitMessage",
-				"title": "(GLCM) Load last commit message"
+				"title": "(GLCM) Load last commit message",
+				"icon": {
+					"light": "assets/cmd-icon-light.svg",
+					"dark": "assets/cmd-icon-dark.svg"
+				}
 			},
 			{
 				"command": "glcm.chooseLastCommitMessage",
