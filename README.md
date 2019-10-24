@@ -16,6 +16,16 @@ Load your last commit message into git commit box, or let you choose from last n
 
 **CTRL+I CTRL+L** - Let you choose from your last commit message and sets it as commit message
 
+### On macOS
+
+**CMD+K CMD+L** - Loads last commit message into commit message box
+
+**CMD+I CMD+L** - Let you choose from your last commit message and sets it as commit message
+
+Source: the `Keyboard Shortcuts` screen in Visual Studio Code
+
+![](https://i.imgur.com/Q7BNn11.png)
+
 ## Extension Settings
 
 ```
