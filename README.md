@@ -32,6 +32,10 @@ Source: the `Keyboard Shortcuts` screen in Visual Studio Code
 "glcm.countOfCommitMessagesToChooseFrom": 10
 ```
 
+```
+"glcm.rewriteAlreadyTypedGitMessage": true
+```
+
 ## Screenshots
 
 ![](https://raw.githubusercontent.com/JanBN/vscode-git-last-commit-message/master/assets/screen_3.PNG)

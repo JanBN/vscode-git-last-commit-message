@@ -2,7 +2,7 @@
 	"name": "git-last-commit-message",
 	"displayName": "Git Last Commit Message (GLCM)",
 	"description": "Pre fills with last commit message",
-	"version": "1.7.0",
+	"version": "1.8.0",
 	"publisher": "JanBn",
 	"repository": {
 		"type": "git",
@@ -75,6 +75,11 @@
 					"type": "number",
 					"default": 10,
 					"description": "Specifies the maximum count of last commit messages to choose from"
+				},
+				"glcm.rewriteAlreadyTypedGitMessage": {
+					"type": "boolean",
+					"default": true,
+					"description": "Rewrite git message in textbox if there is any"
 				}
 			}
 		}

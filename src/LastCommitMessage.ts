@@ -21,12 +21,19 @@ export class LastCommitMessage {
             try {
                 const commit = await rep.getCommit(rep.state.HEAD.commit);
                 if (commit) {
-                    rep.inputBox.value = commit.message;
+                    this.setCommitMessageToTextbox(rep, commit);
                 }
 
             } catch (ex) {
             }
         });
+    }
+
+    private setCommitMessageToTextbox(rep: Git.Repository, commit: Git.Commit) {
+        const isAlreadyTextInInputBox = rep.inputBox.value && rep.inputBox.value.length > 0;
+        if (!isAlreadyTextInInputBox || this._config.rewriteAlreadyTypedGitMessage) {
+            rep.inputBox.value = commit.message;
+        }
     }
 
     async chooseLastCommitMessage() {
@@ -43,7 +50,7 @@ export class LastCommitMessage {
                 placeHolder: "Choose commit message"
             }).then(item => {
                 if (item) {
-                    selectedRep.inputBox.value = item;                    
+                    selectedRep.inputBox.value = item;
                 }
             });
         }
