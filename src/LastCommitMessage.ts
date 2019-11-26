@@ -43,7 +43,7 @@ export class LastCommitMessage {
                 placeHolder: "Choose commit message"
             }).then(item => {
                 if (item) {
-                    selectedRep.inputBox.value = item;
+                    selectedRep.inputBox.value = item;                    
                 }
             });
         }

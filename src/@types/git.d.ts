@@ -1,3 +1,4 @@
+// https://github.com/microsoft/vscode/blob/master/extensions/git/src/api/git.d.ts
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
@@ -120,7 +121,6 @@ export interface LogOptions {
 }
 
 export interface Repository {
-	_repository: any;
 
 	readonly rootUri: Uri;
 	readonly inputBox: InputBox;
@@ -177,11 +177,17 @@ export interface Repository {
 	log(options?: LogOptions): Promise<Commit[]>;
 }
 
+export type APIState = 'uninitialized' | 'initialized';
+
 export interface API {
+	readonly state: APIState;
+	readonly onDidChangeState: Event<APIState>;
 	readonly git: Git;
 	readonly repositories: Repository[];
 	readonly onDidOpenRepository: Event<Repository>;
 	readonly onDidCloseRepository: Event<Repository>;
+
+	toGitUri(uri: Uri, ref: string): Uri;
 }
 
 export interface GitExtension {
@@ -235,5 +241,6 @@ export const enum GitErrorCodes {
 	CantLockRef = 'CantLockRef',
 	CantRebaseMultipleBranches = 'CantRebaseMultipleBranches',
 	PatchDoesNotApply = 'PatchDoesNotApply',
-	NoPathFound = 'NoPathFound'
+	NoPathFound = 'NoPathFound',
+	UnknownPath = 'UnknownPath',
 }

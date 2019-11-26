@@ -100,6 +100,7 @@
 		"webpack-cli": "^3.1.0"
 	},
 	"dependencies": {
+		"@types/vscode": "^1.40.0",
 		"vsce": "^1.58.0"
 	}
 }
