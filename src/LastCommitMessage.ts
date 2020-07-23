@@ -21,7 +21,7 @@ export class LastCommitMessage {
             try {
                 const commit = await rep.getCommit(rep.state.HEAD.commit);
                 if (commit) {
-                    this.setCommitMessageToTextbox(rep, commit);
+                    this.setCommitMessageToTextBox(rep, commit);
                 }
 
             } catch (ex) {
@@ -29,7 +29,7 @@ export class LastCommitMessage {
         });
     }
 
-    private setCommitMessageToTextbox(rep: Git.Repository, commit: Git.Commit) {
+    private setCommitMessageToTextBox(rep: Git.Repository, commit: Git.Commit) {
         const isAlreadyTextInInputBox = rep.inputBox.value && rep.inputBox.value.length > 0;
         if (!isAlreadyTextInInputBox || this._config.rewriteAlreadyTypedGitMessage) {
             rep.inputBox.value = commit.message;
@@ -43,7 +43,7 @@ export class LastCommitMessage {
 
             const countOfCommitMessagesToChooseFrom = this._config.countOfCommitMessagesToChooseFrom;
             const commitMessages = [];
-            await this.getParentCommitRecursivly(0, countOfCommitMessagesToChooseFrom, selectedRep, [selectedRep.state.HEAD.commit], commitMessages);
+            await this.getParentCommitRecursively(0, countOfCommitMessagesToChooseFrom, selectedRep, [selectedRep.state.HEAD.commit], commitMessages);
 
             vscode.window.showQuickPick(commitMessages, {
                 canPickMany: false,
@@ -56,7 +56,7 @@ export class LastCommitMessage {
         }
     }
 
-    async getParentCommitRecursivly(i: number, limit: number, rep: Git.Repository, commitHashes: string[], messages: string[]): Promise<number> {
+    async getParentCommitRecursively(i: number, limit: number, rep: Git.Repository, commitHashes: string[], messages: string[]): Promise<number> {
         if (!commitHashes) {
             return i;
         }
@@ -72,7 +72,7 @@ export class LastCommitMessage {
             if (parentCommit) {
                 i++;
                 messages.push(parentCommit.message);
-                const ranCount = await this.getParentCommitRecursivly(i, limit, rep, parentCommit.parents, messages);
+                const ranCount = await this.getParentCommitRecursively(i, limit, rep, parentCommit.parents, messages);
                 i = i + ranCount;
             }
         }
