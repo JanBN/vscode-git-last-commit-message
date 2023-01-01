@@ -97,12 +97,12 @@
 	],
 	"devDependencies": {
 		"@types/node": "^8.10.25",
-		"ts-loader": "^4.4.2",
+		"ts-loader": "^9.4.2",
 		"tslint": "^5.8.0",
 		"typescript": "^3.3.3333",
 		"vscode": "^1.1.30",
-		"webpack": "^4.19.1",
-		"webpack-cli": "^3.1.0"
+		"webpack": "^5.75.0",
+		"webpack-cli": "^5.0.1"
 	},
 	"dependencies": {
 		"@types/vscode": "^1.40.0",
